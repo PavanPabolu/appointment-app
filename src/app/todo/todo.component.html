@@ -1,0 +1,23 @@
+
+
+<div class="container">
+    <h3 class="text-center mt-3">todo works!</h3>
+
+    <div class="row">
+        <form (submit)="addtodo()" class="form-control">
+            <input class="form-control" type="text" placeholder="Enter todo.."
+            [(ngModel)]="newtodo" name="newtodo" />
+            <input type="submit" value="Add todo" />
+        </form>
+    </div>
+
+    <div class="row">
+        <div class="list-group mt-3">
+            <div *ngFor="let taskname of todoList" 
+            class="list-group-item d-flex justify-content-between align-items">
+            <h5 >{{taskname}}</h5>
+            <button (click)="removetodo(taskname)" class="btn btn-danger">Remove</button>
+            </div>
+        </div>        
+    </div>    
+</div>
